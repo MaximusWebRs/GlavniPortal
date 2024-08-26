@@ -5,6 +5,9 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="index.css">
 
+    <script src="js/main.js"></script>
+    <script src="js/responsive.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -15,11 +18,14 @@
         <h1>Maximus Global Technology</h1>
         <h3>Glavni portal</h3>
     </header>
-
-    <body>
+    <body onload="initResponsive();">
         <section id="websites">
-            <div class="website right">
-                <img src="images/websites/fire.webp">
+            <div class="website right" --data-responsive-activator>
+                <picture>
+                    <source srcset="images/websites/fire-vertical.webp" media="(max-width: 800px)">
+                    <source srcset="images/websites/fire.webp" media="(min-width: 800px)">
+                    <img src="images/websites/fire.webp">
+                </picture>
                 <a href="https://maximuswebrs.github.io/DojavaPozara">
                     <h2>Dojava Požara</h2>
                 </a>
@@ -27,8 +33,12 @@
                     <p>Adresibilni i konvencionalni sistemi dojave, centrale, detektori svih vrsta, CO detektori...</p>
                 </div>
             </div>
-            <div class="website left">
-                <img src="images/websites/electric.webp">
+            <div class="website left" --data-responsive-activator>
+                <picture>
+                    <source srcset="images/websites/electric-vertical.webp" media="(max-width: 800px)">
+                    <source srcset="images/websites/electric.webp" media="(min-width: 800px)">
+                    <img src="images/websites/electric.webp">
+                </picture>
                 <a href="https://maximuswebrs.github.io/ElektroInstalacije">
                     <h2>Elektro Instalacije</h2>
                 </a>
@@ -39,8 +49,12 @@
                     </p>
                 </div>
             </div>
-            <div class="website right">
-                <img src="images/websites/airport.webp">
+            <div class="website right" --data-responsive-activator>
+                <picture>
+                    <source srcset="images/websites/airport-vertical.webp" media="(max-width: 800px)">
+                    <source srcset="images/websites/airport.webp" media="(min-width: 800px)">
+                    <img src="images/websites/airport.webp">
+                </picture>
                 <a href="https://vrata-metal-detektor.rs">
                     <h2>Vrata Metal Detektor</h2>
                 </a>
