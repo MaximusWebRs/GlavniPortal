@@ -50,8 +50,6 @@ header h3 {
     flex-direction: column;
     align-items: center;
 
-    padding-bottom: 100px;
-
     --transition-duration: 0.4s;
 }
 
@@ -233,6 +231,99 @@ header h3 {
     right: -40px;
 }
 
+footer {
+    margin: 0px 0px 50px 0px;
+    padding: 0px;
+    position: relative;
+
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: -50px;
+    left: 0px;
+
+    background: url("images/traka.jpg");
+    background-size: 150px 50px;
+}
+
+#footer-contact {
+    margin: 60px 0px 20px 0px;
+    gap: 30px;
+
+    width: 1200px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#footer-contact a::before {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    left: -35px;
+    top: -2px;
+    border-radius: 2px;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-color: var(--color-red);
+}
+
+#footer-contact-mail::before {
+    background: url("images/icons/mail.webp");
+}
+
+#footer-contact-phone::before {
+    background: url("images/icons/phone.webp");
+}
+
+#footer-contact-location::before {
+    background: url("images/icons/location.webp");
+}
+
+#footer-contact a {
+    padding: 0px;
+    margin: 0px 0px 10px 40px;
+    font-size: 14px;
+}
+
+#footer-contact a::after {
+    height: 1px;
+}
+
+footer a {
+    position: relative;
+    margin: 0px 0px 5px 20px;
+    padding: 0px;
+    width: fit-content;
+
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+footer a::after {
+    position: absolute;
+    bottom: -2px;
+    left: 3px;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--color-red);
+    transition: width 0.2s;
+}
+
 @keyframes arrow-right {
     0% {
         transform: translateX(0px);
@@ -275,6 +366,10 @@ header h3 {
     #websites .website.active a h2::after {
         opacity: 1;
     }
+
+    footer a:active {
+        color: var(--color-red);
+    }
 }
 
 @media (hover: hover) {
@@ -295,11 +390,24 @@ header h3 {
     #websites .website:hover a h2::after {
         opacity: 1;
     }
+
+    footer a:hover {
+        color: var(--color-red);
+    }
+    
+    footer a:hover::after {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
     #websites .website {
         width: 100%;
+    }
+
+    #footer-contact {
+        width: auto;
+        margin: 30px 0px 20px 0px;
     }
 }
 
@@ -385,6 +493,10 @@ header h3 {
         height: auto;
         aspect-ratio: 3/2;
     }
+
+    #footer-contact {
+        padding: 0px 50px 0px 50px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -404,6 +516,17 @@ header h3 {
     header h3 {
         font-size: 14px;
     }
+
+    footer {
+        margin: 0px 0px 30px 0px;
+    }
+
+    footer::after {
+        height: 30px;
+        bottom: -30px;
+    
+        background-size: 100px 30px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -412,21 +535,43 @@ header h3 {
         padding: 4px 7px 4px 7px;
     }
 
+    #websites .website a h2::after {
+        top: -10px;
+    }
+
     #websites .website .slider p {
         font-size: 10px;
         max-width: 250px;
     }
-}
 
-@media only screen and (max-width: 300px) {
-    #websites .website .slider p {
-        font-size: 10px;
-        max-width: 250px;
+    #footer-contact {
+        padding: 0px 20px 0px 20px;
+    }
+
+    #footer-contact a {
+        font-size: 12px;
+    }
+
+    #footer-contact a::before {
+        width: 20px;
+        height: 20px;
+        left: -25px;
+        background-size: 14px;
+        background-position: 3px 3px;
     }
 }
 
 @media only screen and (max-width: 300px) {
     header img {
         height: 70px;
+    }
+
+    #websites .website .slider p {
+        font-size: 10px;
+        max-width: 250px;
+    }
+
+    #footer-contact {
+        padding: 0px;
     }
 }
