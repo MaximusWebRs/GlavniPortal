@@ -28,7 +28,6 @@ function initResponsive() {
     }
     if (!responsiveMatch.matches) {
         activateResponsiveActiveElements(true);
-        console.log('yes');
     }
     responsiveMatch.onchange = (e) => {
         if (e.matches) {
