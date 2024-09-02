@@ -7,7 +7,13 @@
     --color-black: #0C0C0C;
     --color-black-semi: #0C0C0C50;
 
-    user-select: none;
+    -webkit-user-select: none;
+
+       -moz-user-select: none;
+
+        -ms-user-select: none;
+
+            user-select: none;
 }
 
 @font-face {
@@ -98,6 +104,8 @@ header h3 {
 }
 
 #websites .website a h2 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 
     margin: 0px;
@@ -120,23 +128,30 @@ header h3 {
 
     transition: var(--transition-duration) all;
 
-    animation-name: arrow-right;
-    animation-duration: 0.8s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: arrow-right;
+
+            animation-name: arrow-right;
+    -webkit-animation-duration: 0.8s;
+            animation-duration: 0.8s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
 }
 
 #websites .website.right a h2::after {
     left: -80px;
     right: auto;
-    animation-name: arrow-right;
+    -webkit-animation-name: arrow-right;
+            animation-name: arrow-right;
     background-image: url("images/icons/arrow-right.webp");
 }
 
 #websites .website.left a h2::after {
     left: auto;
     right: -80px;
-    animation-name: arrow-left;
+    -webkit-animation-name: arrow-left;
+            animation-name: arrow-left;
     background-image: url("images/icons/arrow-left.webp");
 }
 
@@ -307,6 +322,8 @@ footer a {
     position: relative;
     margin: 0px 0px 5px 20px;
     padding: 0px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 
     text-decoration: none;
@@ -324,12 +341,36 @@ footer a::after {
     transition: width 0.2s;
 }
 
+@-webkit-keyframes arrow-right {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 @keyframes arrow-right {
     0% {
         transform: translateX(0px);
     }
     50% {
         transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@-webkit-keyframes arrow-left {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(20px);
     }
     100% {
         transform: translateX(0px);
